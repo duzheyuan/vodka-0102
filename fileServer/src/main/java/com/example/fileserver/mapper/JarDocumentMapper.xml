@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.fileserver.mapper.JarDocumentMapper">
+    <insert id="insertOneJarDocument" parameterType="JarDocument">
+        insert into  sys_jar_document(joID,jdUploadTime,uuid,status)
+        values (#{joID},#{jdUploadTime},#{uuid},#{status})
+    </insert>
+    <select id="selectJarDocumentByUUID" resultType="JarDocument">
+        select * from sys_jar_document where  uuid=#{uuid}
+    </select>
+    <update id="updateJarDocumentStatus" parameterType="java.lang.String">
+         update sys_jar_document set `status`=0 where uuid=#{uuid}
+    </update>
+</mapper>

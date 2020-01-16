@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="eurekaCenter" />
+        <module name="fileServer" />
+        <module name="mongodbServer" />
+        <module name="redisServer" />
+        <module name="userClient" />
+        <module name="userServer" />
+        <module name="vodkaCommon" />
+        <module name="zuulServer" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="eureka-center" target="1.8" />
+      <module name="eurekaCenter" target="1.8" />
+      <module name="file-server" target="1.8" />
+      <module name="fileServer" target="1.8" />
+      <module name="jarTrustee-0101" target="1.8" />
+      <module name="mongodb-server" target="1.8" />
+      <module name="mongodbServer" target="1.8" />
+      <module name="redis-server" target="1.8" />
+      <module name="redisServer" target="1.8" />
+      <module name="user-client" target="1.8" />
+      <module name="user-server" target="1.8" />
+      <module name="userClient" target="1.8" />
+      <module name="userServer" target="1.8" />
+      <module name="vodka-common" target="1.8" />
+      <module name="vodkaCommon" target="1.8" />
+      <module name="zuul-server" target="1.8" />
+      <module name="zuulServer" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

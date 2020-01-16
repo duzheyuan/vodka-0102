@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.fileserver.mapper.JarNewMapper">
+    <insert id="insertOneJarNew" parameterType="JarNew">
+        insert into  sys_jar_new(jarName,jarPath_new,jarUploadTime,jarDowloadNumber,jarSkillOrientation,
+        jarVersion,jarSize,uid,uname,jarIntroduce,uuid,status)
+        values (#{jarName},#{jarPath_new},#{jarUploadTime},#{jarDowloadNumber},#{jarSkillOrientation},
+        #{jarVersion},#{jarSize},#{uid},#{uname},#{jarIntroduce},#{uuid},#{status})
+    </insert>
+
+    <select id="selectJarByJnID" parameterType="java.lang.Integer" resultType="JarNew">
+      select * from sys_jar_new where jnID=#{jnID}
+    </select>
+
+    <select id="selectJarNewByUUID" parameterType="java.lang.String" resultType="JarNew">
+        select * from sys_jar_new where uuid=#{uuid}
+    </select>
+
+    <select id="selectJarNews" resultType="JarNew">
+        select * from sys_jar_new where status="0"  order by `jarUploadTime` DESC
+    </select>
+
+    <select id="selectSelfJarNews" resultType="JarNew">
+        select * from sys_jar_new
+        <where>
+            status!="2"
+            <if test="uid!=null">
+                and uid =#{uid}
+            </if>
+            <if test="uname!=null">
+                and uname =#{uname}
+            </if>
+            <if test="uuid!=null">
+                and uuid=#{uuid}
+            </if>
+        </where>
+        order by `jarUploadTime` DESC
+    </select>
+
+    <update id="updateStatus" parameterType="java.lang.Integer">
+        update sys_jar_new set `status`=0 where jnID=#{jnID}
+    </update>
+    <update id="updateJarNew" parameterType="JarNew">
+        update sys_jar_new set jarName=#{jarName},jarPath_new=#{jarPath_new},jarUploadTime=#{jarUploadTime},jarDowloadNumber=#{jarDowloadNumber},
+        jarSkillOrientation=#{jarSkillOrientation},jarVersion=#{jarVersion},jarSize=#{jarSize},uid=#{uid},uname=#{uname},
+        jarIntroduce=#{jarIntroduce},uuid=#{uuid},status=#{status}
+        where  jnID=#{jnID}
+    </update>
+    <delete id="deleteJarNewByJnID" parameterType="java.lang.Integer">
+        delete from sys_jar_new where jnID=#{jnID};
+    </delete>
+</mapper>

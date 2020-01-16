@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/eurekaCenter/eurekaCenter.iml" filepath="$PROJECT_DIR$/eurekaCenter/eurekaCenter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/fileServer/fileServer.iml" filepath="$PROJECT_DIR$/fileServer/fileServer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jarTrustee-0101.iml" filepath="$PROJECT_DIR$/jarTrustee-0101.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mongodbServer/mongodbServer.iml" filepath="$PROJECT_DIR$/mongodbServer/mongodbServer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/redisServer/redisServer.iml" filepath="$PROJECT_DIR$/redisServer/redisServer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/userClient/userClient.iml" filepath="$PROJECT_DIR$/userClient/userClient.iml" />
+      <module fileurl="file://$PROJECT_DIR$/userServer/userServer.iml" filepath="$PROJECT_DIR$/userServer/userServer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/vodkaCommon/vodkaCommon.iml" filepath="$PROJECT_DIR$/vodkaCommon/vodkaCommon.iml" />
+      <module fileurl="file://$PROJECT_DIR$/zuulServer/zuulServer.iml" filepath="$PROJECT_DIR$/zuulServer/zuulServer.iml" />
+    </modules>
+  </component>
+</project>

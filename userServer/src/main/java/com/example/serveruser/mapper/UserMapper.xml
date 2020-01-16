@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.serveruser.mapper.UserMapper">
+    <select id="selectAllUsers" resultType="User">
+        select * from sys_user where status=0 order by `createDate` DESC
+    </select>
+
+    <insert id="insertNewUser" parameterType="User">
+        insert into sys_user(uname,upassword,status,createDate,useruuid) values (#{uname},#{upassword},#{status},#{createDate},#{useruuid})
+    </insert>
+    <select id="selectUserByUname" parameterType="java.lang.String" resultType="User">
+        select * from sys_user where uname=#{uname}
+    </select>
+
+    <select id="selectUserByUid" parameterType="java.lang.Integer" resultType="User">
+        select * from sys_user where uid=#{uid}
+    </select>
+
+    <!--根据UUID获得用户-->
+    <select id="selectUserByUUID" parameterType="java.lang.String" resultType="User">
+        select * from sys_user where useruuid=#{useruuid}
+    </select>
+
+    <update id="deleteUserByUid" parameterType="java.lang.Integer">
+        update  sys_user set status=1 where uid=#{uid}
+    </update>
+    <update id="updatePwd">
+         update  sys_user set upassword=#{uPwd} where uid=#{uid}
+    </update>
+
+
+</mapper>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.fileserver.mapper.JarOldMapper">
+    <insert id="insertOneJarOld" parameterType="JarOld">
+        insert into  sys_jar_old(jnID,jarName,jarPath_old,jarUploadTime,jarDowloadNumber,jarSkillOrientation,jarVersion,jarSize,uid,uname,jarIntroduce,uuid,status)
+        values (#{jnID},#{jarName},#{jarPath_old},#{jarUploadTime},#{jarDowloadNumber},#{jarSkillOrientation},#{jarVersion},#{jarSize},#{uid},#{uname},#{jarIntroduce},#{uuid},#{status})
+    </insert>
+
+    <select id="selectJarOldByUUID" parameterType="java.lang.String" resultType="JarOld">
+        select * from sys_jar_old where uuid=#{uuid}
+    </select>
+
+    <select id="selectAllJarOldByJnID" parameterType="java.lang.Integer" resultType="JarOld">
+        select * from sys_jar_old where  jnID=#{jnID}  order by `jarUploadTime` DESC
+    </select>
+
+    <select id="selectJarOldByJoID" parameterType="java.lang.Integer" resultType="JarOld">
+        select * from sys_jar_old where joID=#{joID}
+    </select>
+    <delete id="deleteJarOldsByIDs" parameterType="java.util.List">
+        delete from sys_jar_old where joID in
+        <foreach collection="list" item="ids" open="(" close=")" separator=",">
+            #{ids}
+        </foreach>
+    </delete>
+
+    <update id="updateJarOldStatus" parameterType="java.lang.String">
+        update sys_jar_old set `status`=0 where uuid=#{uuid}
+    </update>
+</mapper>
